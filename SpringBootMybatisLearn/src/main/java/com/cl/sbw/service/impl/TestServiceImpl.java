@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.cl.sbw.dao.Dao;
+import com.cl.sbw.dao.pojo.SerTestPOJO;
 import com.cl.sbw.dao.pojo.TestPOJO;
 import com.cl.sbw.db.annotation.Master;
 import com.cl.sbw.db.annotation.Slave;
@@ -37,5 +38,16 @@ public class TestServiceImpl implements TestService {
 		TestPOJO b = (TestPOJO) this.dao.selectOne(test);
 		System.out.println(b.getValue());
 	}
+
+	@Override
+	public void sqlServerSelect() {
+		// TODO Auto-generated method stub
+		SerTestPOJO test = new SerTestPOJO();
+		test.setId("1");
+		SerTestPOJO result = (SerTestPOJO) this.dao.findOne(test); 
+		System.out.println( result.getName());
+	}
+	
+	
 
 }

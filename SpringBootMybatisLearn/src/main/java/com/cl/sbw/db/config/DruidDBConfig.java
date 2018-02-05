@@ -77,6 +77,7 @@ public class DruidDBConfig {
 			dataSource.setPoolPreparedStatements(true);
 			dataSource.setMaxPoolPreparedStatementPerConnectionSize(20);
 			dataSource.setMaxWait(1000*45);
+			dataSource.setDbType("sqlserver");
 			return dataSource;
 		}
 		

@@ -22,7 +22,8 @@ public class SayHai {
 	
 	@RequestMapping("hai")
 	public String hai() {
-		testService.selectTest();
+		//testService.selectTest();
+		testService.sqlServerSelect();
 		Logger log = LoggerFactory.getLogger(this.getClass());
 		System.out.println(redisTemplate00.opsForValue().get("aaaa"));
 		return "hai, how are you!";

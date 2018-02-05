@@ -5,4 +5,7 @@ public interface TestService {
 	void selectTest();
 	
 	void selectTest2();
+	
+	
+	void sqlServerSelect();
 }

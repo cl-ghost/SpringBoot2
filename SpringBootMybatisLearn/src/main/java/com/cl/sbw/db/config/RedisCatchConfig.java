@@ -57,7 +57,6 @@ public class RedisCatchConfig extends CachingConfigurerSupport  {
         pooConfig.setMaxTotal(20);
         pooConfig.setMaxWaitMillis(1000*45);
         factory.setPoolConfig(pooConfig);
-   //     factory.setDatabase(database);
         return factory;
     }
 
