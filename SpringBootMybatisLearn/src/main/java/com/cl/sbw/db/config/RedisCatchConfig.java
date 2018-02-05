@@ -16,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import redis.clients.jedis.JedisPoolConfig;
+
 
 /**
  * 缓存配置
@@ -49,6 +51,12 @@ public class RedisCatchConfig extends CachingConfigurerSupport  {
         factory.setPort(port);
         factory.setTimeout(timeout);
         factory.setPassword(password);
+        factory.setUsePool(true);
+        JedisPoolConfig pooConfig = new JedisPoolConfig();
+        pooConfig.setMaxIdle(10);
+        pooConfig.setMaxTotal(20);
+        pooConfig.setMaxWaitMillis(1000*45);
+        factory.setPoolConfig(pooConfig);
    //     factory.setDatabase(database);
         return factory;
     }
